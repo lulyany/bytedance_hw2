@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  #map{
+    position: absolute;
+    margin:auto;
+    width: 670px;
+    height: 670px;
+    border: 5px solid black;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    visibility:hidden;
+  }
+
+  #Snak_head{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    box-shadow: 0 0 15px 1px black;
+    /* background-color: red; */
+  }
+  iframe{
+      width: 20px;
+      height: 20px;
+  }
+
+  .food_span{
+    background-image: url("/src/prize.s"); 
+    position: absolute;
+    display: block;
+    /* background-color: blue; */
+    width: 20px;
+    height: 20px;
+
+    animation: bounceIn;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+    /* don't forget to set a duration! */ 
+  }
+
+
+  .Snak_body{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    box-shadow: 0 0 15px 1px black;
+  }
+  #Start_game{
+    position: absolute;
+    width: 100%;
+    height: 33%;
+    top:0;
+    bottom:0;
+    margin:auto;
+    display: flex;
+    visibility: visible;
+    align-items:center;
+    justify-content:space-around;
+    border:1px solid black;
+    font-size: 5.5rem;
+    background-color: black;
+    color: white;
+    z-index: 9999;
+    font-family: monospace;
+  }
+  #Start_game span{
+    position: relative; 
+  }
+  select {
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    width:60px;
+    height: 30px;
+    margin-left:18px;
+    outline: none;
+    padding-left:15px;
+    border-radius: 5px;
+  }
+  #Start_game span:after {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: loading 2s -2s steps(3) infinite;
+    content: attr(data-text);
+  }
+  @keyframes loading {
+    0%{
+      width: 0rem;
+    }
+    33%{
+      width: 5rem;
+    }
+    100%{
+      width: 10rem;
+    }
+  } 
